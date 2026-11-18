@@ -12,7 +12,7 @@ import {
   formatCurrency,
   orders as initialOrders,
   type OrderStatus,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState(initialOrders);

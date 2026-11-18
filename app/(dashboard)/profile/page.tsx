@@ -23,7 +23,7 @@ export default function ProfilePage() {
               <Avatar.Fallback>OP</Avatar.Fallback>
             </Avatar>
             <h2 className="mt-4 text-xl font-semibold text-foreground">Omi Pradana</h2>
-            <p className="text-sm text-muted">omi@tixora.co</p>
+            <p className="text-sm text-muted">omi@famekagame.co</p>
             <Chip className="mt-4" color="accent" size="sm" variant="soft">
               Template owner
             </Chip>
@@ -38,7 +38,7 @@ export default function ProfilePage() {
           <Card.Content>
             <div className="divide-y divide-default">
               {[
-                ["Workspace", "Tixora Events Co.", Person],
+                ["Workspace", "Fame Ka Game", Person],
                 ["Role", "Owner / Admin", ShieldCheck],
                 ["Billing", "Pro plan preview", CreditCard],
                 ["Notifications", "Email and in-app alerts enabled", Bell],
@@ -77,7 +77,7 @@ export default function ProfilePage() {
         <Card>
           <Card.Header>
             <Card.Title>Support</Card.Title>
-            <Card.Description>support@tixora.co</Card.Description>
+            <Card.Description>Fame.ka.game2626@gmail.com</Card.Description>
           </Card.Header>
         </Card>
       </div>

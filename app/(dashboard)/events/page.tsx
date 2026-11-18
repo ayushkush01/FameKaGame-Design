@@ -18,12 +18,14 @@ import {
   percent,
   type EventData,
   type EventStatus,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
-const categoryOptions = ["Conference", "Music Festival", "Sports", "Expo"].map((item) => ({
-  label: item,
-  value: item,
-}));
+const categoryOptions = Array.from(new Set(initialEvents.map((event) => event.category))).map(
+  (item) => ({
+    label: item,
+    value: item,
+  }),
+);
 
 const statusOptions: EventStatus[] = ["Published", "Draft", "Scheduled", "Completed"];
 const statusSelectOptions = statusOptions.map((item) => ({ label: item, value: item }));
@@ -32,14 +34,20 @@ function toDateInput(date: string) {
   const parsed = new Date(date);
 
   if (Number.isNaN(parsed.getTime())) {
-    return "2026-06-28";
+    return "";
   }
 
   return parsed.toISOString().slice(0, 10);
 }
 
 function formatEventDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
+  const parsed = new Date(date);
+
+  if (Number.isNaN(parsed.getTime())) {
+    return date;
+  }
+
+  return parsed.toLocaleDateString("en-IN", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -107,11 +115,15 @@ export default function EventsPage() {
                   <Card.Description>
                     {event.category} - {event.city}
                   </Card.Description>
+                  <p className="mt-1 text-xs text-muted">
+                    {event.date} · {event.venue}
+                  </p>
                 </div>
                 <StatusChip status={event.status} />
               </div>
             </Card.Header>
             <Card.Content className="gap-4">
+              <p className="text-sm text-muted">{event.description}</p>
               <div className="grid grid-cols-3 gap-3 text-sm">
                 <div>
                   <p className="text-muted">Revenue</p>
@@ -207,7 +219,7 @@ function EditEventDialog({
       capacity: Number(form.capacity) || event.capacity,
       category: form.category,
       city: form.city || event.city,
-      date: formatEventDate(form.date),
+      date: form.date ? formatEventDate(form.date) : event.date,
       name: form.name || event.name,
       status: form.status as EventStatus,
       venue: form.venue || event.venue,

@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tixora - Event Ticket Dashboard",
+  title: "Fame Ka Game - Season 1 Ticket Dashboard",
   description:
-    "Frontend dashboard template for event ticket sales, buyers, check-in, payouts, and reports.",
+    "Admin dashboard for Fame Ka Game - Season 1 (All-India talent reality show, Bilaspur) ticket sales, contestants, check-in, payouts, and reports.",
 };
 
 export default function RootLayout({

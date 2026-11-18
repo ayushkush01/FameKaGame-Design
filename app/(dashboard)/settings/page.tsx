@@ -9,7 +9,7 @@ import { ItemCard } from "@/components/item-card";
 import { SectionHeader } from "@/components/section-header";
 
 export default function SettingsPage() {
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("INR");
   const [settings, setSettings] = useState({
     autoRefundReview: false,
     emailReceipts: true,
@@ -29,11 +29,11 @@ export default function SettingsPage() {
           <Card.Content className="gap-4">
             <label className="block space-y-2 text-sm">
               <span className="text-muted">Organization name</span>
-              <Input aria-label="Organization name" defaultValue="Tixora Events Co." fullWidth variant="secondary" />
+              <Input aria-label="Organization name" defaultValue="Fame Ka Game" fullWidth variant="secondary" />
             </label>
             <label className="block space-y-2 text-sm">
               <span className="text-muted">Support email</span>
-              <Input aria-label="Support email" defaultValue="support@tixora.co" fullWidth variant="secondary" />
+              <Input aria-label="Support email" defaultValue="Fame.ka.game2626@gmail.com" fullWidth variant="secondary" />
             </label>
             <label className="block space-y-2 text-sm">
               <span className="text-muted">Default currency</span>
@@ -41,7 +41,7 @@ export default function SettingsPage() {
                 ariaLabel="Default currency"
                 fullWidth
                 onChange={setCurrency}
-                options={["USD", "IDR", "SGD"].map((item) => ({ label: item, value: item }))}
+                options={["INR", "USD", "IDR", "SGD"].map((item) => ({ label: item, value: item }))}
                 value={currency}
               />
             </label>
@@ -89,7 +89,7 @@ export default function SettingsPage() {
               {[
                 ["emailReceipts", "Email receipts", "Send ticket receipt after every paid order", Bell],
                 ["payoutAlerts", "Payout alerts", "Notify finance when payouts settle", CreditCard],
-                ["autoRefundReview", "Refund review", "Flag refunds above $250 for approval", Gear],
+                ["autoRefundReview", "Refund review", "Flag refunds above ₹25,000 for approval", Gear],
               ].map(([key, label, body, Icon]) => (
                 <ItemCard key={key as string} variant="secondary">
                   <ItemCard.Icon>

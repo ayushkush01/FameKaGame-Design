@@ -15,7 +15,7 @@ import {
   payouts,
   totals,
   type PayoutStatus,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
 const payoutStatusOptions: Array<PayoutStatus | "All"> = ["All", "Paid", "Pending", "Failed"];
 

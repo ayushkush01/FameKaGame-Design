@@ -40,7 +40,7 @@ const navigationGroups: Array<{ items: NavigationItem[]; label: string }> = [
     items: [
       { href: "/events", icon: Calendar, label: "Events" },
       { href: "/tickets", icon: Receipt, label: "Tickets" },
-      { href: "/promos", icon: Tag, label: "Promo Codes" },
+      // { href: "/promos", icon: Tag, label: "Promo Codes" },
     ],
   },
   {
@@ -48,7 +48,7 @@ const navigationGroups: Array<{ items: NavigationItem[]; label: string }> = [
     items: [
       { href: "/orders", icon: CreditCard, label: "Orders" },
       { href: "/attendees", icon: Persons, label: "Attendees" },
-      { href: "/check-in", icon: QrCode, label: "Check-in" },
+      // { href: "/check-in", icon: QrCode, label: "Check-in" },
     ],
   },
   {
@@ -115,7 +115,7 @@ export function DashboardShell({ children }: { children: ReactNode }) {
                   <Bars className="size-4" />
                 </Button>
                 <div className="min-w-0">
-                  <p className="text-sm text-muted">Tixora Workspace</p>
+                  <p className="text-sm text-muted">Fame Ka Game Workspace</p>
                   <h1 className="truncate text-lg font-semibold text-foreground">
                     {navigation.find((item) => item.href === pathname)?.label ??
                       pageTitles[pathname] ??
@@ -149,7 +149,7 @@ function SidebarContent({ logoSrc, pathname }: { logoSrc: string; pathname: stri
   return (
     <div className="sticky top-0 flex h-svh flex-col p-4">
       <Link className="flex items-center rounded-2xl px-2 py-2" href="/dashboard">
-        <Image alt="Tixora" className="h-10 w-auto" height={40} priority src={logoSrc} width={130} />
+        <Image alt="Fame Ka Game" className="h-14 w-auto" height={56} priority src={logoSrc} width={246} />
       </Link>
 
       <nav className="mt-6 flex-1 space-y-5 overflow-y-auto pr-1">
@@ -180,24 +180,6 @@ function SidebarContent({ logoSrc, pathname }: { logoSrc: string; pathname: stri
           </div>
         ))}
       </nav>
-
-      <div className="mt-4 space-y-3">
-        <div className="rounded-3xl bg-accent p-4 text-center text-accent-foreground">
-          <span className="mx-auto -mt-8 mb-3 flex size-12 items-center justify-center rounded-full border-4 border-surface bg-accent">
-            <Headphones className="size-5" strokeWidth={1.5} />
-          </span>
-          <p className="font-semibold">Help & Center</p>
-          <p className="mt-2 text-xs opacity-75">
-            Having difficulty in ticketing? Contact support for help.
-          </p>
-          <Link
-            className="mt-4 block rounded-2xl bg-accent-foreground px-3 py-2 text-sm font-semibold text-accent"
-            href="mailto:support@tixora.co"
-          >
-            Go to help center
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }

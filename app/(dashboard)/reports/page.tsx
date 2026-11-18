@@ -16,7 +16,7 @@ import {
   tickets,
   type EventStatus,
   type TicketStatus,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
 const eventStatusOptions: Array<EventStatus | "All"> = [
   "All",

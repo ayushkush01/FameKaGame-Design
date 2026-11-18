@@ -22,13 +22,13 @@ export function ProfilePopover() {
               </Avatar>
               <div className="min-w-0">
                 <p className="truncate text-sm font-semibold text-foreground">Omi Pradana</p>
-                <p className="truncate text-xs text-muted">omi@tixora.co</p>
+                <p className="truncate text-xs text-muted">omi@famekagame.co</p>
               </div>
             </div>
 
             <div className="rounded-xl bg-default p-3">
               <p className="text-xs text-muted">Workspace</p>
-              <p className="mt-1 text-sm font-medium text-foreground">Tixora Events Co.</p>
+              <p className="mt-1 text-sm font-medium text-foreground">Fame Ka Game</p>
             </div>
 
             <Separator />

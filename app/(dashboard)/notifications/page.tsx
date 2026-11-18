@@ -2,7 +2,7 @@ import { Bell, Check, Clock } from "@gravity-ui/icons";
 import { Button, Card } from "@heroui/react";
 
 import { SectionHeader } from "@/components/section-header";
-import { notifications } from "@/lib/tixora-data";
+import { notifications } from "@/lib/fame-ka-game-data";
 
 export default function NotificationsPage() {
   return (

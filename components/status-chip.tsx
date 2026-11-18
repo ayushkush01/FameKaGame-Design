@@ -6,7 +6,7 @@ import type {
   PayoutStatus,
   PromoStatus,
   TicketStatus,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
 type Status = EventStatus | OrderStatus | TicketStatus | PayoutStatus | PromoStatus;
 type ChipColor = "accent" | "success" | "warning" | "danger" | "default";

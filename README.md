@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/logo-bg-light.svg" alt="Tixora Logo" width="400" />
+<img src="public/logo-bg-light.svg" alt="Fame Ka Game Logo" width="400" />
 
 ### The Modern Event Ticketing Dashboard
 
@@ -20,9 +20,9 @@ A sleek, fully-featured admin dashboard for managing events, tickets, orders, an
 
 ## About
 
-**Tixora** is a comprehensive event ticketing management dashboard designed for event organizers, promoters, and venue operators. It provides a complete admin interface to manage the full lifecycle of ticketed events — from creation and promotion to check-in and payout reconciliation.
+**Fame Ka Game** is a comprehensive event ticketing management dashboard designed for event organizers, promoters, and venue operators. It provides a complete admin interface to manage the full lifecycle of ticketed events — from creation and promotion to check-in and payout reconciliation.
 
-Built as a modern single-page application with a polished UI, dark/light theme support, and responsive design, Tixora serves as a production-ready template or a starting point for building real ticketing platforms.
+Built as a modern single-page application with a polished UI, dark/light theme support, and responsive design, Fame Ka Game serves as a production-ready template or a starting point for building real ticketing platforms.
 
 ---
 
@@ -157,7 +157,7 @@ tixora/
 │   ├── profile-popover.tsx         # Avatar dropdown menu
 │   └── ...                         # Additional shared components
 ├── lib/
-│   └── tixora-data.ts             # Mock data + helper functions
+│   └── fame-ka-game-data.ts       # Mock data + helper functions
 ├── public/
 │   ├── logo-bg-dark.svg           # Dark theme logo
 │   └── logo-bg-light.svg          # Light theme logo

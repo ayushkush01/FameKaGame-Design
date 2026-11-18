@@ -8,11 +8,11 @@ import { AppSelect } from "@/components/app-select";
 import { ItemCard } from "@/components/item-card";
 import { MetricCard } from "@/components/metric-card";
 import { SectionHeader } from "@/components/section-header";
-import { attendees, events, gateSeries } from "@/lib/tixora-data";
+import { attendees, events, gateSeries } from "@/lib/fame-ka-game-data";
 
 export default function CheckInPage() {
   const [selectedEventId, setSelectedEventId] = useState(events[0].id);
-  const [scanCode, setScanCode] = useState("TIX-2049");
+  const [scanCode, setScanCode] = useState("FKG-1002");
   const [checkedCodes, setCheckedCodes] = useState(
     attendees.filter((attendee) => attendee.checkedIn).map((attendee) => attendee.ticketCode),
   );
@@ -84,7 +84,7 @@ export default function CheckInPage() {
                 aria-label="Ticket code"
                 fullWidth
                 onChange={(event) => setScanCode(event.target.value.toUpperCase())}
-                placeholder="TIX-2049"
+                placeholder="FKG-1002"
                 value={scanCode}
                 variant="secondary"
               />

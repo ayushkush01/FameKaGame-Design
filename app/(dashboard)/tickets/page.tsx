@@ -18,7 +18,7 @@ import {
   tickets as ticketData,
   type TicketData,
   type TicketStatus,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
 const ticketStatusOptions: TicketStatus[] = ["Active", "Paused", "Sold out"];
 
@@ -148,10 +148,10 @@ function AddTicketDialog({
   const [form, setForm] = useState({
     eventId: events[0]?.id ?? "",
     name: "",
-    price: "79",
+    price: "499",
     quota: "500",
     status: "Active" as TicketStatus,
-    window: "Now - June 30",
+    window: "Now - [TBD]",
   });
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
@@ -195,7 +195,7 @@ function AddTicketDialog({
                 onChange={(inputEvent) =>
                   setForm((current) => ({ ...current, name: inputEvent.target.value }))
                 }
-                placeholder="VIP Balcony"
+                placeholder="Premium Front Row"
                 value={form.name}
                 variant="secondary"
               />
@@ -261,7 +261,7 @@ function AddTicketDialog({
                 onChange={(inputEvent) =>
                   setForm((current) => ({ ...current, window: inputEvent.target.value }))
                 }
-                placeholder="Now - June 30"
+                placeholder="Now - [TBD]"
                 value={form.window}
                 variant="secondary"
               />

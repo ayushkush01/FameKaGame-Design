@@ -6,7 +6,20 @@ import type { FormEvent } from "react";
 import { useState } from "react";
 
 import { AppSelect } from "@/components/app-select";
-import type { EventData } from "@/lib/tixora-data";
+import { events as initialEvents, type EventData } from "@/lib/fame-ka-game-data";
+
+const categoryOptions = Array.from(new Set(initialEvents.map((event) => event.category))).map(
+  (item) => ({ label: item, value: item }),
+);
+
+const emptyForm = {
+  capacity: "1200",
+  category: categoryOptions[0]?.value ?? "Audition & Selection",
+  city: "Bilaspur",
+  date: "",
+  name: "",
+  venue: "",
+};
 
 export function CreateEventDrawer({
   onCreate,
@@ -16,14 +29,7 @@ export function CreateEventDrawer({
   size?: "sm" | "md" | "lg";
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [form, setForm] = useState({
-    capacity: "1200",
-    category: "Conference",
-    city: "",
-    date: "2026-06-28",
-    name: "",
-    venue: "",
-  });
+  const [form, setForm] = useState(emptyForm);
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,31 +38,27 @@ export function CreateEventDrawer({
       capacity: Number(form.capacity) || 1200,
       category: form.category,
       checkIn: 0,
-      city: form.city || "New York",
-      date: new Date(form.date).toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      }),
-      id: `ev-${Date.now().toString().slice(-4)}`,
-      name: form.name || "Untitled Event",
+      city: form.city || "Bilaspur",
+      date: form.date
+        ? new Date(form.date).toLocaleDateString("en-IN", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })
+        : "[Date TBD]",
+      description: "[Description TBD]",
+      id: `ep-${Date.now().toString().slice(-4)}`,
+      name: form.name || "Untitled Episode",
       revenue: 0,
       sold: 0,
       status: "Draft",
       trend: 0,
-      venue: form.venue || "Main Hall",
+      venue: form.venue || "[Venue TBD]",
     };
 
     onCreate?.(nextEvent);
     setIsOpen(false);
-    setForm({
-      capacity: "1200",
-      category: "Conference",
-      city: "",
-      date: "2026-06-28",
-      name: "",
-      venue: "",
-    });
+    setForm(emptyForm);
   };
 
   return (
@@ -82,7 +84,7 @@ export function CreateEventDrawer({
                   </span>
                   <div>
                     <Card.Title>Create event</Card.Title>
-                    <Card.Description>Draft a new event for your ticket catalog.</Card.Description>
+                    <Card.Description>Draft a new episode for the ticket catalog.</Card.Description>
                   </div>
                 </div>
                 <Button isIconOnly onPress={() => setIsOpen(false)} size="sm" variant="ghost">
@@ -96,7 +98,7 @@ export function CreateEventDrawer({
                     aria-label="Event name"
                     fullWidth
                     onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
-                    placeholder="City Tech Conference"
+                    placeholder="Episode 17 – Audition & Selection Round"
                     value={form.name}
                     variant="secondary"
                   />
@@ -107,10 +109,7 @@ export function CreateEventDrawer({
                     ariaLabel="Category"
                     fullWidth
                     onChange={(value) => setForm((current) => ({ ...current, category: value }))}
-                    options={["Conference", "Music Festival", "Sports", "Expo"].map((item) => ({
-                      label: item,
-                      value: item,
-                    }))}
+                    options={categoryOptions}
                     value={form.category}
                   />
                 </label>
@@ -131,7 +130,7 @@ export function CreateEventDrawer({
                     aria-label="City"
                     fullWidth
                     onChange={(event) => setForm((current) => ({ ...current, city: event.target.value }))}
-                    placeholder="San Francisco"
+                    placeholder="Bilaspur"
                     value={form.city}
                     variant="secondary"
                   />
@@ -142,7 +141,7 @@ export function CreateEventDrawer({
                     aria-label="Venue"
                     fullWidth
                     onChange={(event) => setForm((current) => ({ ...current, venue: event.target.value }))}
-                    placeholder="Convention Center"
+                    placeholder="Auditorium / Studio name"
                     value={form.venue}
                     variant="secondary"
                   />

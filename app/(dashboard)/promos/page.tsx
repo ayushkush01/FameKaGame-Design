@@ -15,12 +15,12 @@ import {
   promos as promoData,
   type PromoData,
   type PromoStatus,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
 const promoStatusOptions: PromoStatus[] = ["Active", "Scheduled", "Expired"];
 
 function formatPromoDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
+  return new Date(date).toLocaleDateString("en-IN", {
     day: "numeric",
     month: "long",
     year: "numeric",

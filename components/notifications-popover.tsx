@@ -5,7 +5,7 @@ import { Button, Popover, Separator, buttonVariants } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
-import { notifications } from "@/lib/tixora-data";
+import { notifications } from "@/lib/fame-ka-game-data";
 
 export function NotificationsPopover() {
   const router = useRouter();

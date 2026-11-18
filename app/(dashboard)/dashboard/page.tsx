@@ -18,7 +18,7 @@ import {
   percent,
   salesSeries,
   totals,
-} from "@/lib/tixora-data";
+} from "@/lib/fame-ka-game-data";
 
 export default function DashboardPage() {
   const selectedEvent = events[0];
@@ -36,7 +36,7 @@ export default function DashboardPage() {
           </div>
         }
         eyebrow="Control center"
-        title="Event ticket operations"
+        title="Fame Ka Game - Season 1 ticket operations"
       />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -80,7 +80,7 @@ export default function DashboardPage() {
           <Card.Content>
             <SalesChart labels={chartLabels} values={salesSeries} />
             <div className="mt-4 grid gap-3 md:grid-cols-4">
-              {["Feb", "Mar", "Apr", "May"].map((month, index) => (
+              {chartLabels.slice(1, 5).map((month, index) => (
                 <ItemCard key={month} variant="secondary">
                   <ItemCard.Icon>
                     <ChartLine className="size-5" />
@@ -88,7 +88,7 @@ export default function DashboardPage() {
                   <ItemCard.Content>
                     <ItemCard.Title>{month}</ItemCard.Title>
                     <ItemCard.Description>
-                      {formatCurrency([28400, 37600, 42100, 58300][index])}
+                      {formatCurrency(salesSeries[index + 1])}
                     </ItemCard.Description>
                   </ItemCard.Content>
                 </ItemCard>

@@ -1,5 +1,5 @@
 {
-  "name": "tixora",
+  "name": "fame-ka-game",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,9 @@
     "@gravity-ui/icons": "^2.18.0",
     "@heroui/react": "^3.0.5",
     "@heroui/styles": "^3.0.5",
+    "@react-aria/i18n": "^3.13.1",
+    "@react-aria/ssr": "^3.10.1",
+    "@react-aria/utils": "^3.34.1",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4"

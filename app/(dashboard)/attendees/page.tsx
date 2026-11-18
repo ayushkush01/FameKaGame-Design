@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 
 import { MetricCard } from "@/components/metric-card";
 import { SectionHeader } from "@/components/section-header";
-import { attendees, eventName } from "@/lib/tixora-data";
+import { attendees, eventName, gateSeries } from "@/lib/fame-ka-game-data";
 
 export default function AttendeesPage() {
   const [query, setQuery] = useState("");
@@ -36,9 +36,24 @@ export default function AttendeesPage() {
       />
 
       <div className="grid gap-4 md:grid-cols-3">
-        <MetricCard helper="Dummy attendee records" icon={Persons} label="Total attendees" value="6" />
-        <MetricCard helper="Currently arrived" icon={Check} label="Checked in" value="3" />
-        <MetricCard helper="Manual and QR flow" icon={QrCode} label="Open gates" value="4" />
+        <MetricCard
+          helper="Ticket owners on record"
+          icon={Persons}
+          label="Total attendees"
+          value={String(attendees.length)}
+        />
+        <MetricCard
+          helper="Currently arrived"
+          icon={Check}
+          label="Checked in"
+          value={String(attendees.filter((attendee) => attendee.checkedIn).length)}
+        />
+        <MetricCard
+          helper="Manual and QR flow"
+          icon={QrCode}
+          label="Open gates"
+          value={String(gateSeries.length)}
+        />
       </div>
 
       <div className="relative">
